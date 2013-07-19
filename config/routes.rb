@@ -1,4 +1,10 @@
 PhotoView::Application.routes.draw do
+
+
+  match '/upload' => "images#new", :method => :get
+  
+  resources :images
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
