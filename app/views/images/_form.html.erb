@@ -1,0 +1,11 @@
+<div class="submit-form">
+	<%=	form_for @image, :html => { :multipart => true } do |f| %>
+	<div class="form-field">
+		<%= render 'field' %>
+	</div>
+	<p><%= f.submit %></p>
+	<% end %>
+</div>
+
+<button id="add-field">add</button>
+

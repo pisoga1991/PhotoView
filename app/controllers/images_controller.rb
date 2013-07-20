@@ -5,13 +5,14 @@ class ImagesController < ApplicationController
     end
 
     def create
-        @image = Image.new(params[:image])
+        binding.pry
         @categories = Category.all
-        if @image.save
-            redirect_to "/upload"
-        else
-            redirect_to "/upload"
+        @check = true
+        params[:image].each do |i|
+            @image = Image.new(i)
+            @image.save
         end
+        redirect_to "/upload"
     end
 
     def show

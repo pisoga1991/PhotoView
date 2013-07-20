@@ -1,0 +1,16 @@
+<%=fields_for "image[]" do |img| %>
+
+<%= img.select :category_id, @categories.map{|c| [c.name,c.id]}%>
+
+<p>
+	<%= img.label :name %><br>
+	<%= img.text_field :name %>
+</p>
+<p>
+	<%= img.file_field :image %>
+</p>
+<p>
+	<%= img.label :remote_image_url, "or image URL" %><br />
+	<%= img.text_field :remote_image_url %>
+</p>
+<%end%>
