@@ -3,6 +3,7 @@ class ImagesController < ApplicationController
     before_filter do |controller|
         @image = Image.new
         @categories = Category.all
+        @images = Image.find(:all)
     end
 
     def new
@@ -11,14 +12,14 @@ class ImagesController < ApplicationController
     def create
         @image = Image.new(params[:image])
         if @image.save
-            binding.pry
+            # binding.pry
 
             respond_to do |format|
                 format.html { redirect_to root_path }
                 format.js
             end
         else
-            binding.pry
+            # binding.pry
             
             respond_to do |format|
                 format.html { redirect_to root_path }
@@ -32,7 +33,7 @@ class ImagesController < ApplicationController
     end
 
     def index
-        @images = Image.find(:all)
+        # @images = Image.find(:all)
     end
 
 end
