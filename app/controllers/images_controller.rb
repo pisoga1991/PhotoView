@@ -1,18 +1,30 @@
 class ImagesController < ApplicationController
-	def new
+
+    before_filter do |controller|
         @image = Image.new
         @categories = Category.all
     end
 
+    def new
+    end
+
     def create
-        binding.pry
-        @categories = Category.all
-        @check = true
-        params[:image].each do |i|
-            @image = Image.new(i)
-            @image.save
+        @image = Image.new(params[:image])
+        if @image.save
+            binding.pry
+
+            respond_to do |format|
+                format.html { redirect_to root_path }
+                format.js
+            end
+        else
+            binding.pry
+            
+            respond_to do |format|
+                format.html { redirect_to root_path }
+                format.js
+            end
         end
-        redirect_to "/upload"
     end
 
     def show
@@ -20,5 +32,7 @@ class ImagesController < ApplicationController
     end
 
     def index
+        @images = Image.find(:all)
     end
+
 end

@@ -1,9 +1,10 @@
 PhotoView::Application.routes.draw do
 
+  resources :images, only: [:new, :create, :show]
 
-  match '/upload' => "images#new", :method => :get
+  get '/upload', to: "images#new"
+  root :to => 'images#index'
   
-  resources :images
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
