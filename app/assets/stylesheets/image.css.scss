@@ -1,3 +1,84 @@
 // Place all the styles related to the Image controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//INDEX
+
+.image-block {
+	height: 600px;
+	#images {
+		overflow: hidden;
+		float: left;
+		width: 40%;
+		height: 100%;
+		background-color: lightgrey;
+		#image-list {
+			/*overflow: hidden;*/
+			/*float: left;*/
+			height: 100%;
+			width: 100%;
+			li {
+				display: inline;
+				.image-item {
+					/*display: inline-block;*/
+					float: left;
+					width: 50px;
+					height: 50px;
+					overflow: hidden;
+					margin: 2%;
+					&:hover {
+						-moz-box-shadow: 0 0 10px 5px #FFF;
+						-webkit-box-shadow: 0 0 10px 5px #FFF;
+						box-shadow: 0 0 10px 5px #FFF;
+					}
+					img {
+						margin: -100%;
+						-webkit-filter: grayscale(100%);
+						&:hover {
+							-webkit-filter: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#category {
+		padding:3px;
+		width: 100%;
+		height: 50px;
+		font-size: 20px;
+		margin: 0;
+		-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+		-moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+		box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+		background: #f8f8f8;
+		color:#888;
+		border:none;
+		outline:none;
+		display: inline-block;
+		-webkit-appearance:none;
+		-moz-appearance:none;
+		appearance:none;
+		cursor:pointer;
+		background: url(/assets/down_arrow_select.png) no-repeat right #f8f8f8;
+		background-position-x: 98.5%;
+
+	}
+	#image-display {
+		float: right;
+		width: 59.5%;
+		height: 100%;
+		background-color: grey;
+		.image-detail {
+			max-height: 370px;
+			text-align: center;
+			margin: 50px 0 0 0;
+			img {
+				max-width: 70%;
+				max-height: 100%;
+			}
+		}
+	}
+}
+

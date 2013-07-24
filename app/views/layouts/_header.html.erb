@@ -1,11 +1,12 @@
-<h1>Header</h1>
-<div id="error-messages">
-<%= render 'shared/error_messages' %>
-</div>
+<div class="header">
+	<div id="error-messages">
+		<%= render 'shared/error_messages' %>
+	</div>
 
-<%=	form_for @image, remote: true do |f| %>
-<div class="form-field">
-	<%= render partial: 'shared/field', locals: {f:f} %>
+	<%=	form_for @image, remote: true do |f| %>
+	<div class="form-field">
+		<%= render partial: 'shared/field', locals: {f:f} %>
+	</div>
+	<p><%= f.submit %></p>
+	<% end %>
 </div>
-<p><%= f.submit %></p>
-<% end %>

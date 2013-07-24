@@ -1,6 +1,8 @@
 PhotoView::Application.routes.draw do
 
-  resources :images, only: [:new, :create, :show]
+  get '/update_category',:to=> 'images#update_category', :as => 'update_category'
+  get '/update_display',:to=> 'images#update_display', :as => 'update_display'
+  resources :images, :only => [:create]
 
   get '/upload', to: "images#new"
   root :to => 'images#index'

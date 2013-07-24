@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+	min-width: 1000px;
+	color: black;
+}
+.footer {
+	clear: both;
+}
